@@ -1,12 +1,19 @@
-import express, { Express } from "express";
-import cors from "cors";
+require("dotenv/config")
+require("./database/connection")
+const express = require("express");
+const cors = require("cors");
+const productsRouter = require("./router/productsRouter");
+
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.use("/", route);
+// console.log("Aqui", productsRouter)
+
+app.use("/products", productsRouter);
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
