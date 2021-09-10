@@ -1,7 +1,7 @@
 import express from 'express'
 // import { UserController } from '../UserController'
 
-export const userRouter = express.Router()
+export const productsRouter = express.Router()
 
 // const userController = new UserController()
 
