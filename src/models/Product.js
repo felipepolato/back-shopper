@@ -3,7 +3,7 @@ const { Schema, model } = mongoose;
 
 const productSchema = new Schema(
   {
-    id: Number,
+    id: {type: Number, unique: true},
     name: String,
     price: Number,
     qty_stock: Number,
@@ -15,4 +15,4 @@ const productSchema = new Schema(
 
 const Product = model("Product", productSchema);
 
-export default Product;
+module.exports = Product;

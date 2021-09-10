@@ -4,9 +4,9 @@ const productsController = require("../controller/products");
 
 
 const productsRouter = new express.Router();
-//const userController = new UserController()
 
 productsRouter.get("/", productsController.getProducts);
-productsRouter.post("/", productsController.postProducts);
+productsRouter.post("/", productsController.postProduct);
+productsRouter.put("/", productsController.putProduct);
 
 module.exports = productsRouter
