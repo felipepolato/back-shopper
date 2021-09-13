@@ -37,6 +37,8 @@ module.exports.postProduct = async (req, res, next) => {
   }
 };
 
+
+///PUT  /products/
 module.exports.putProduct = async (req, res, next) => {
   try {
     const { id, qty } = req.body;
