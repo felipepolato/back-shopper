@@ -42,7 +42,6 @@ module.exports.putProduct = async (req, res, next) => {
   try {
     const { id, qty } = req.body;
     if (!id || !qty) {
-      console.log("ERROO")
       throw new Error("Parâmetros Inexistentes!");
     }
 
@@ -68,11 +67,9 @@ module.exports.putProduct = async (req, res, next) => {
         new: true,
       }
     );
-    console.log(updated);
     return res.json(updated);
     ///TODO Tratar Erro ////////
   } catch (error) {
-    console.log("ERRO AQQUI", error.message)
     return res.status(400).json({ message:  error.message });
   }
 };
