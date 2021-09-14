@@ -3,6 +3,7 @@ require("./database/connection")
 const express = require("express");
 const cors = require("cors");
 const productsRouter = require("./router/productsRouter");
+const cartRouter = require("./router/cartRouter");
 
 
 const app = express();
@@ -10,9 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// console.log("Aqui", productsRouter)
-
 app.use("/products", productsRouter);
+app.use("/cart", cartRouter);
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
